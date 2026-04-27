@@ -20,9 +20,14 @@ export default function RootLayout({
       </head>
 
       <body className="overflow-x-hidden bg-white">
-        <TopBar />
-        <Navbar />
-        {children}
+        <div className="fixed left-0 top-0 z-50 w-full">
+          <TopBar />
+          <Navbar />
+        </div>
+
+        <main className="pt-[116px] sm:pt-[122px] md:pt-[136px]">
+          {children}
+        </main>
       </body>
     </html>
   );
