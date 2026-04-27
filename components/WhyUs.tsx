@@ -10,29 +10,30 @@ import {
 import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
 
-const fadeIn: Variants = {
-  hidden: { opacity: 0, y: 20 },
+const easeOutExpo = [0.16, 1, 0.3, 1] as const;
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.65,
+      ease: easeOutExpo,
+    },
+  },
+};
+
+const fadeCard: Variants = {
+  hidden: { opacity: 0, y: 28 },
   show: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
+      ease: easeOutExpo,
     },
   },
-};
-
-const fadeLeft: Variants = {
-  hidden: { opacity: 0, x: -40 },
-  show: (i: number = 0) => ({
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: i * 0.12,
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  }),
 };
 
 const cards = [
@@ -88,9 +89,8 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-[linear-gradient(180deg,#F8FCFF_0%,#F1F8FC_16%,#EAF4FA_38%,#E1EEF7_68%,#D7E8F3_100%)] px-6 pb-24 pt-25 lg:px-10"
+      className="relative overflow-hidden bg-[linear-gradient(180deg,#F8FCFF_0%,#F1F8FC_16%,#EAF4FA_38%,#E1EEF7_68%,#D7E8F3_100%)] px-6 pb-24 pt-24 lg:px-10"
     >
-      {/* cloud / soft shape top left */}
       <div className="pointer-events-none absolute left-0 top-0 h-44 w-[34rem] rounded-br-[8rem] bg-sky-100/90" />
       <div className="pointer-events-none absolute left-10 top-6 h-40 w-[26rem] rounded-full bg-white/60 blur-[10px]" />
 
@@ -101,12 +101,11 @@ export default function About() {
       </div>
 
       <div className="relative mx-auto max-w-[1450px]">
-        {/* TOP HEADING */}
         <motion.div
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true }}
-          variants={fadeIn}
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeUp}
           className="mb-10 text-center"
         >
           <h2 className="mx-auto max-w-[900px] text-4xl font-black uppercase leading-[0.95] tracking-[-0.03em] text-[#062B63] md:text-5xl">
@@ -118,24 +117,22 @@ export default function About() {
           </p>
         </motion.div>
 
-        {/* SMALL CARDS */}
         <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-5">
-          {cards.map((card, i) => {
+          {cards.map((card) => {
             const Icon = card.icon;
 
             return (
               <motion.article
                 key={card.title}
-                custom={i}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ once: true }}
-                variants={fadeLeft}
-                className="group relative rounded-[18px] border-2 border-[#0A2F73] bg-white px-5 pb-8 pt-8 shadow-[9px_9px_0_0_#062B63] transition duration-300 hover:-translate-y-1 hover:border-sky-500 hover:shadow-[11px_11px_0_0_#38BDF8]"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeCard}
+                className="group relative min-h-[320px] rounded-[18px] border-2 border-[#0A2F73] bg-white px-5 pb-8 pt-8 shadow-[9px_9px_0_0_#062B63] transition duration-300 hover:-translate-y-1 hover:border-sky-500 hover:shadow-[11px_11px_0_0_#38BDF8]"
               >
                 <div className="flex justify-center">
-                  <div className="flex h-[74px] w-[74px] items-center justify-center rounded-2xl bg-sky-50 text-[#0A4CB3] transition duration-300 group-hover:bg-sky-100 group-hover:text-sky-500">
-                    <Icon className="h-10 w-10 stroke-[2.2]" />
+                  <div className="flex h-[74px] w-[74px] shrink-0 items-center justify-center rounded-2xl bg-sky-50 text-[#0A4CB3] transition duration-300 group-hover:bg-sky-100 group-hover:text-sky-500">
+                    <Icon className="h-10 w-10 shrink-0 stroke-[2.2]" />
                   </div>
                 </div>
 
@@ -157,29 +154,31 @@ export default function About() {
           })}
         </div>
 
-        {/* LOWER HEADING */}
         <motion.div
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true }}
-          variants={fadeIn}
-          className="mb-9 mt-30 text-center"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeUp}
+          className="mb-9 mt-28 text-center"
         >
           <h2 className="text-4xl font-black uppercase leading-[0.95] tracking-[-0.03em] text-[#062B63] md:text-5xl">
             Choose Kaybecs
           </h2>
         </motion.div>
 
-        {/* BIG CARDS */}
-        <div className="mx-auto flex max-w-[1400px] flex-wrap justify-center gap-10">
+        <div className="mx-auto grid max-w-[1400px] gap-10 md:grid-cols-2 xl:grid-cols-3">
           {valueCards.map((card) => {
             return (
-              <article
+              <motion.article
                 key={card.title}
-                className="group relative flex h-[520px] w-[400px] flex-col justify-between rounded-[5px] border-2 border-dashed border-[#0891B2] bg-[linear-gradient(180deg,#D6E6F0_0%,#C9DDEA_100%)] px-12 py-12 text-center"
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeCard}
+                className="group relative flex min-h-[520px] w-full flex-col justify-between rounded-[5px] border-2 border-dashed border-[#0891B2] bg-[linear-gradient(180deg,#D6E6F0_0%,#C9DDEA_100%)] px-8 py-10 text-center sm:px-12 sm:py-12"
               >
                 <div>
-                  <h3 className="text-[64px] font-black text-[#062B63]">
+                  <h3 className="text-[52px] font-black leading-none text-[#062B63] sm:text-[64px]">
                     {card.title}
                   </h3>
 
@@ -200,7 +199,7 @@ export default function About() {
                     {card.cta}
                   </Link>
                 </div>
-              </article>
+              </motion.article>
             );
           })}
         </div>
