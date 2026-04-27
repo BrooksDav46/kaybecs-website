@@ -5,51 +5,33 @@ import { Phone } from "lucide-react";
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex h-[88px] max-w-[1450px] items-center justify-between px-8 xl:px-12 2xl:px-16">
-        {/* LOGO */}
+      <div className="mx-auto flex h-[74px] max-w-[1450px] items-center justify-between px-4 md:h-[88px] md:px-8 xl:px-12 2xl:px-16">
         <Link href="/" className="flex items-center">
           <Image
             src="/KayBecs_Logo_Recc.png"
             alt="KayBecs Heating & Air"
             width={620}
             height={180}
-            className="h-[90px] w-auto object-contain"
+            className="h-[52px] w-auto object-contain md:h-[76px]"
             priority
           />
         </Link>
 
-        {/* NAV */}
         <nav className="hidden items-center gap-12 xl:flex">
-          <Link
-            href="/"
-            className="text-[15px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500"
-          >
+          <Link href="/" className="text-[15px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500">
             Home
           </Link>
-
-          <Link
-            href="/about"
-            className="text-[15px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500"
-          >
+          <Link href="/about" className="text-[15px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500">
             About
           </Link>
-
-          <Link
-            href="/services"
-            className="text-[15px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500"
-          >
+          <Link href="/services" className="text-[15px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500">
             Services
           </Link>
-
-          <Link
-            href="/#contact"
-            className="text-[15px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500"
-          >
+          <Link href="/#contact" className="text-[15px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500">
             Contact Us
           </Link>
         </nav>
 
-        {/* CTA */}
         <Link
           href="tel:9152742685"
           className="hidden items-center justify-center rounded-xl bg-sky-500 px-8 py-3.5 text-sm font-black uppercase tracking-[0.1em] text-white transition hover:bg-sky-400 xl:inline-flex"
@@ -59,7 +41,7 @@ export default function Navbar() {
         </Link>
       </div>
 
-      <div className="h-[6px] w-full bg-gradient-to-r from-[#062B63] via-sky-500 to-[#062B63]" />
+      <div className="h-[5px] w-full bg-gradient-to-r from-[#062B63] via-sky-500 to-[#062B63]" />
     </header>
   );
 }
