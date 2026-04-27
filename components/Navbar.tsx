@@ -10,34 +10,49 @@ export default function Navbar() {
       <div className="mx-auto flex h-[76px] max-w-[1450px] items-center justify-between px-4 sm:h-[82px] md:h-[94px] md:px-8 xl:px-12 2xl:px-16">
         <Link
           href="/"
-          className="relative flex h-[48px] w-[165px] shrink-0 items-center sm:h-[56px] sm:w-[195px] md:h-[76px] md:w-[265px]"
+          className="flex h-[48px] w-[165px] shrink-0 items-center overflow-hidden sm:h-[56px] sm:w-[195px] md:h-[76px] md:w-[260px]"
           onClick={() => window.scrollTo(0, 0)}
+          aria-label="Go to KayBecs homepage"
         >
           <Image
             src="/KayBecs_Logo_Recc.png"
             alt="KayBecs Heating & Air"
-            fill
+            width={260}
+            height={76}
             priority
-            sizes="(max-width: 640px) 165px, (max-width: 768px) 195px, 265px"
-            className="block object-contain"
+            sizes="(max-width: 640px) 165px, (max-width: 768px) 195px, 260px"
+            className="block h-full w-full object-contain"
           />
         </Link>
 
         <nav className="hidden items-center gap-12 xl:flex">
-          {[
-            ["Home", "/"],
-            ["About", "/about"],
-            ["Services", "/services"],
-            ["Contact Us", "/#contact"],
-          ].map(([label, href]) => (
-            <Link
-              key={label}
-              href={href}
-              className="text-[15px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500"
-            >
-              {label}
-            </Link>
-          ))}
+          <Link
+            href="/"
+            className="text-[15px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500"
+          >
+            Home
+          </Link>
+
+          <Link
+            href="/about"
+            className="text-[15px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500"
+          >
+            About
+          </Link>
+
+          <Link
+            href="/services"
+            className="text-[15px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500"
+          >
+            Services
+          </Link>
+
+          <Link
+            href="/#contact"
+            className="text-[15px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500"
+          >
+            Contact Us
+          </Link>
         </nav>
 
         <Link

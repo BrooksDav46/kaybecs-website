@@ -13,4 +13,11 @@ body {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
+}
+
+/* THIS is the important part */
+img:not([width]):not([height]) {
+  width: 100%;
+  height: auto;
 }

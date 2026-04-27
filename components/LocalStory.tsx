@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Phone } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
@@ -29,17 +28,10 @@ export default function LocalStory() {
         </div>
       </div>
 
-      <div className="absolute inset-0 overflow-hidden">
-        <Image
-          src="/LocalStory.png"
-          alt="Kaybecs technician working on HVAC system"
-          fill
-          priority
-          quality={75}
-          sizes="100vw"
-          className="block object-cover object-left"
-        />
-      </div>
+      <div
+        className="absolute inset-0 bg-cover bg-left bg-no-repeat"
+        style={{ backgroundImage: "url('/LocalStory.png')" }}
+      />
 
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,43,99,0.88)_0%,rgba(10,60,144,0.78)_42%,rgba(10,76,179,0.96)_100%)] lg:bg-[linear-gradient(90deg,rgba(6,43,99,0.38)_0%,rgba(10,60,144,0.28)_34%,rgba(10,76,179,0.80)_56%,rgba(10,76,179,0.96)_100%)]" />
 
@@ -101,4 +93,4 @@ export default function LocalStory() {
       </div>
     </section>
   );
-}
+} 
