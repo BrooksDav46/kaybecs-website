@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Phone } from "lucide-react";
@@ -6,7 +8,11 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex h-[74px] max-w-[1450px] items-center justify-between px-4 md:h-[88px] md:px-8 xl:px-12 2xl:px-16">
-        <Link href="/" className="flex items-center">
+        <Link
+          href="/"
+          className="flex items-center"
+          onClick={() => window.scrollTo(0, 0)}
+        >
           <Image
             src="/KayBecs_Logo_Recc.png"
             alt="KayBecs Heating & Air"
@@ -18,16 +24,31 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden items-center gap-12 xl:flex">
-          <Link href="/" className="text-[15px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500">
+          <Link
+            href="/"
+            className="text-[15px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500"
+          >
             Home
           </Link>
-          <Link href="/about" className="text-[15px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500">
+
+          <Link
+            href="/about"
+            className="text-[15px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500"
+          >
             About
           </Link>
-          <Link href="/services" className="text-[15px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500">
+
+          <Link
+            href="/services"
+            className="text-[15px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500"
+          >
             Services
           </Link>
-          <Link href="/#contact" className="text-[15px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500">
+
+          <Link
+            href="/#contact"
+            className="text-[15px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500"
+          >
             Contact Us
           </Link>
         </nav>
