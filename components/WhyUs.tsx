@@ -8,20 +8,23 @@ import {
   BadgePercent,
 } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
-const fadeIn = {
+const fadeIn: Variants = {
   hidden: { opacity: 0, y: 20 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
   },
 };
 
-const fadeLeft = {
+const fadeLeft: Variants = {
   hidden: { opacity: 0, x: -40 },
-  show: (i = 0) => ({
+  show: (i: number = 0) => ({
     opacity: 1,
     x: 0,
     transition: {
@@ -90,6 +93,7 @@ export default function About() {
       {/* cloud / soft shape top left */}
       <div className="pointer-events-none absolute left-0 top-0 h-44 w-[34rem] rounded-br-[8rem] bg-sky-100/90" />
       <div className="pointer-events-none absolute left-10 top-6 h-40 w-[26rem] rounded-full bg-white/60 blur-[10px]" />
+
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-0 top-0 h-[340px] w-full bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.92),transparent_34%)]" />
         <div className="absolute right-0 top-[35%] h-[420px] w-full bg-[radial-gradient(circle_at_center_right,rgba(186,219,239,0.16),transparent_28%)]" />
