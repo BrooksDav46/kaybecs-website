@@ -35,14 +35,14 @@ const fadeUp: Variants = {
 export default function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-[#0A2F73]">
-      <div className="relative h-[600px] w-full sm:h-[640px] md:h-[700px] xl:h-[760px]">
+      <div className="relative h-[640px] w-full overflow-hidden sm:h-[660px] md:h-[700px] xl:h-[760px]">
         <Image
           src="/KB_Banner.png"
           alt="Kaybecs Heating & Air Service in El Paso, TX"
           fill
           priority
           sizes="100vw"
-          className="absolute inset-0 h-full w-full object-cover object-[72%_center] sm:object-center"
+          className="block object-cover object-[72%_center] sm:object-center"
         />
 
         <div className="absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgba(6,43,99,0.95)_0%,rgba(10,47,115,0.85)_50%,rgba(10,76,179,0.35)_100%)] md:bg-[linear-gradient(90deg,rgba(6,43,99,0.9)_0%,rgba(10,60,144,0.6)_40%,rgba(10,76,179,0.1)_75%)]" />
@@ -51,12 +51,12 @@ export default function Hero() {
           variants={container}
           initial="hidden"
           animate="show"
-          className="relative z-10 mx-auto flex h-full max-w-[1450px] items-center px-5 pt-20 pb-16 sm:px-6 md:px-8 xl:px-12 2xl:px-16"
+          className="relative z-10 mx-auto flex h-full max-w-[1450px] items-center px-5 pt-16 pb-20 sm:px-6 md:px-8 xl:px-12 2xl:px-16"
         >
           <div className="w-full max-w-[650px]">
             <motion.h1
               variants={fadeUp}
-              className="text-[40px] font-black leading-[0.95] tracking-tight text-white sm:text-[54px] md:text-[78px] xl:text-[92px]"
+              className="text-[38px] font-black leading-[0.95] tracking-tight text-white min-[380px]:text-[42px] sm:text-[54px] md:text-[78px] xl:text-[92px]"
             >
               Reliable Heating & Air Service{" "}
               <span className="text-[#7DD3FC]">in El Paso, TX</span>
