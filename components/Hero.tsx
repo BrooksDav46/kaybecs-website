@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Phone, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const fadeIn = {
@@ -10,21 +10,20 @@ const fadeIn = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.6 },
   },
 };
 
 const fadeLeft = {
   hidden: { opacity: 0, x: -40 },
-  show: (i = 1) => ({
+  show: {
     opacity: 1,
     x: 0,
     transition: {
-      delay: i * 0.12,
+      delay: 0.12,
       duration: 0.6,
-      ease: "easeOut",
     },
-  }),
+  },
 };
 
 export default function Hero() {
@@ -70,8 +69,8 @@ export default function Hero() {
                 variants={fadeIn}
                 className="mt-6 max-w-[620px] text-[20px] leading-[1.6] text-white/90 md:text-[22px]"
               >
-                Fast, dependable heating and cooling services for homes in El Paso.
-                Call now for repairs, installations, and maintenance.
+                Fast, dependable heating and cooling services for homes in El
+                Paso. Call now for repairs, installations, and maintenance.
               </motion.p>
 
               <motion.div
@@ -79,7 +78,7 @@ export default function Hero() {
                 className="mt-7 flex flex-col gap-4 sm:flex-row"
               >
                 <Link
-                  href="tel:5555555555"
+                  href="tel:9152742685"
                   className="inline-flex min-w-[220px] items-center justify-center rounded-2xl bg-sky-500 px-8 py-4 text-xl font-black text-white shadow-[0_16px_36px_rgba(14,165,233,0.28)] transition hover:-translate-y-0.5 hover:bg-sky-400"
                 >
                   <Phone className="mr-3 h-5 w-5" />
@@ -87,19 +86,12 @@ export default function Hero() {
                 </Link>
 
                 <Link
-                  href="#contact"
+                  href="/#contact"
                   className="inline-flex min-w-[270px] items-center justify-center rounded-2xl bg-white px-8 py-4 text-xl font-black text-[#0A4CB3] shadow-[0_16px_36px_rgba(255,255,255,0.14)] transition hover:-translate-y-0.5 hover:bg-slate-100"
                 >
                   Request Estimate
                   <ArrowRight className="ml-3 h-5 w-5" />
                 </Link>
-              </motion.div>
-
-              <motion.div
-                variants={fadeIn}
-                className="mt-7 grid gap-3 text-sm font-semibold text-white/90 sm:grid-cols-2"
-              >
-              
               </motion.div>
             </motion.div>
           </div>
