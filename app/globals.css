@@ -36,3 +36,10 @@ img:not([width]):not([height]) {
   width: 100%;
   height: auto;
 }
+.nav-link {
+  @apply text-[14px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500;
+}
+
+.mobile-link {
+  @apply text-base font-bold text-slate-900;
+}
