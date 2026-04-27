@@ -6,27 +6,24 @@ import { Phone } from "lucide-react";
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex h-[76px] max-w-[1450px] items-center justify-between px-4 sm:h-[82px] md:h-[90px] md:px-8 xl:px-12 2xl:px-16">
-        
-        {/* LOGO (stable, no flash) */}
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white">
+      <div className="mx-auto flex h-[78px] max-w-[1450px] items-center justify-between px-4 sm:h-[84px] md:h-[92px] md:px-8 xl:px-12 2xl:px-16">
         <Link
           href="/"
           aria-label="Go to KayBecs homepage"
           onClick={() => window.scrollTo(0, 0)}
-          className="relative flex h-[42px] w-[140px] shrink-0 items-center overflow-hidden sm:h-[48px] sm:w-[165px] md:h-[58px] md:w-[200px]"
+          className="relative flex h-[48px] w-[158px] shrink-0 items-center overflow-hidden sm:h-[54px] sm:w-[185px] md:h-[64px] md:w-[220px]"
         >
           <Image
             src="/KayBecs_Logo_Recc.png"
             alt="KayBecs Heating & Air"
             fill
             priority
-            sizes="(max-width: 640px) 140px, (max-width: 768px) 165px, 200px"
+            sizes="(max-width: 640px) 158px, (max-width: 768px) 185px, 220px"
             className="object-contain"
           />
         </Link>
 
-        {/* NAV LINKS */}
         <nav className="hidden items-center gap-10 xl:flex">
           <Link href="/" className="text-[14px] font-black uppercase tracking-[0.12em] text-slate-900 transition hover:text-sky-500">
             Home
@@ -42,7 +39,6 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        {/* MOBILE CALL BUTTON */}
         <Link
           href="tel:9152742685"
           className="inline-flex shrink-0 items-center justify-center rounded-lg bg-sky-500 px-4 py-2.5 text-xs font-black uppercase tracking-[0.08em] text-white transition hover:bg-sky-400 sm:px-5 xl:hidden"
@@ -51,7 +47,6 @@ export default function Navbar() {
           Call
         </Link>
 
-        {/* DESKTOP CTA */}
         <Link
           href="tel:9152742685"
           className="hidden shrink-0 items-center justify-center rounded-xl bg-sky-500 px-7 py-3 text-sm font-black uppercase tracking-[0.1em] text-white transition hover:bg-sky-400 xl:inline-flex"
@@ -61,7 +56,6 @@ export default function Navbar() {
         </Link>
       </div>
 
-      {/* BOTTOM STRIP */}
       <div className="h-[4px] w-full bg-gradient-to-r from-[#062B63] via-sky-500 to-[#062B63]" />
     </header>
   );
