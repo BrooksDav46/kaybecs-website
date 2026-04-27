@@ -14,12 +14,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="preload" as="image" href="/KayBecs_Logo_Recc.png" />
+      </head>
+
+      <body className="overflow-x-hidden bg-white">
         <TopBar />
         <Navbar />
         {children}
       </body>
     </html>
   );
-};
+}

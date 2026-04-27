@@ -9,20 +9,20 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex h-[76px] max-w-[1450px] items-center justify-between px-4 sm:h-[82px] md:h-[90px] md:px-8 xl:px-12 2xl:px-16">
         
-        {/* LOGO */}
+        {/* LOGO (stable, no flash) */}
         <Link
           href="/"
-          className="flex h-[42px] w-[140px] shrink-0 items-center overflow-hidden sm:h-[48px] sm:w-[165px] md:h-[58px] md:w-[200px]"
+          aria-label="Go to KayBecs homepage"
           onClick={() => window.scrollTo(0, 0)}
+          className="relative flex h-[42px] w-[140px] shrink-0 items-center overflow-hidden sm:h-[48px] sm:w-[165px] md:h-[58px] md:w-[200px]"
         >
           <Image
             src="/KayBecs_Logo_Recc.png"
             alt="KayBecs Heating & Air"
-            width={200}
-            height={60}
+            fill
             priority
             sizes="(max-width: 640px) 140px, (max-width: 768px) 165px, 200px"
-            className="block h-full w-full object-contain"
+            className="object-contain"
           />
         </Link>
 
